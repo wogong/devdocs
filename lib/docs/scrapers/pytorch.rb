@@ -13,7 +13,7 @@ module Docs
 
     html_filters.push 'sphinx/clean_html', 'pytorch/clean_html', 'pytorch/entries'
 
-    options[:skip_patterns] = [/\Acommunity/]
+    options[:skip_patterns] = [/\Acommunity/, /\A_modules/]
     options[:max_image_size] = 256_000
 
     options[:attribution] = <<-HTML
