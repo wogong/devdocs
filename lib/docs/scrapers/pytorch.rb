@@ -17,8 +17,9 @@ module Docs
     options[:max_image_size] = 256_000
 
     options[:attribution] = <<-HTML
-    &copy; 2010&ndash;2019 JetBrains s.r.o.<br>
-    Licensed under the Apache License, Version 2.0.
+    &copy; 2019 Torch Contributors<br>
+    Licensed under the 3-clause BSD License.<br>
+    <a href="https://github.com/pytorch/pytorch/blob/master/LICENSE" class="_attribution-link">https://github.com/pytorch/pytorch/blob/master/LICENSE</a>
     HTML
 
     def get_latest_version(opts)
