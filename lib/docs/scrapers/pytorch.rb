@@ -11,7 +11,7 @@ module Docs
       code: 'https://github.com/pytorch/pytorch'
     }
 
-    html_filters.push 'sphinx/clean_html'
+    html_filters.push 'sphinx/clean_html', 'pytorch/entries'
 
     options[:container] = ->(filter) { '.pytorch-container'}
     options[:skip] = %w(tutorial/statistical_inference/finding_help.html)
