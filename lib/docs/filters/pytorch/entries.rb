@@ -13,19 +13,38 @@ module Docs
       def additional_entries
         return [] if root_page?
 
-        css('h1, dt').each_with_object [] do |node, entries|
-          name = node['id']
-          type = nil
+        entries = []
 
-          # not sure what type means
+        css('dt').each do |node|
+          name = node['id']
+          if name == self.name or name == nil
+            next
+          end
+
+          # TODO: classmethod
           case node.parent['class']
           when 'function'
-              type = 'function'
-          when 'class'
-              type = 'class'
+            entries << [name + '()', node['id'], nil]
+          when 'class', 'attribute'
+            entries << [name, node['id'], nil]
           end
-          entries << [name, node['id'], type] unless name == self.name or name == nil
         end
+
+        css('dt').each do |node|
+          name = node['id']
+          if name == self.name or name == nil
+            next
+          end
+
+          case node.parent['class']
+          when 'function'
+            entries << [name + '()', node['id']]
+          when 'class', 'attribute'
+            entries << [name, node['id']]
+          end
+        end
+
+        entries
       end
     end
   end

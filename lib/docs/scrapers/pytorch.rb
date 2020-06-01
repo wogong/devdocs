@@ -13,13 +13,14 @@ module Docs
 
     html_filters.push 'sphinx/clean_html', 'pytorch/clean_html', 'pytorch/entries'
 
-    options[:skip_patterns] = [/\Acommunity/, /\A_modules/]
+    options[:skip] = ['cpp_index.html', 'packages.html', 'py-modindex.html', 'genindex.html']
+    options[:skip_patterns] = [/\Acommunity/, /\A_modules/, /\Anotes/, /\Aorg\/pytorch\//, /\Arpc\//]
     options[:max_image_size] = 256_000
 
     options[:attribution] = <<-HTML
     &copy; 2019 Torch Contributors<br>
     Licensed under the 3-clause BSD License.<br>
-    <a href="https://github.com/pytorch/pytorch/blob/master/LICENSE" class="_attribution-link">https://github.com/pytorch/pytorch/blob/master/LICENSE</a>
+    <a href="https://github.com/pytorch/pytorch/blob/master/LICENSE" class="_attribution-link">Read the full license.</a>
     HTML
 
     def get_latest_version(opts)
