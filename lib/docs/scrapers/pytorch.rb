@@ -20,7 +20,7 @@ module Docs
     options[:attribution] = <<-HTML
     &copy; 2019 Torch Contributors<br>
     Licensed under the 3-clause BSD License.<br>
-    <a href="https://github.com/pytorch/pytorch/blob/master/LICENSE" class="_attribution-link">Read the full license.</a>
+    <a href="https://raw.githubusercontent.com/pytorch/pytorch/master/LICENSE" class="_attribution-link">Read the full license.</a>
     HTML
 
     def get_latest_version(opts)
