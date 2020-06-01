@@ -25,11 +25,11 @@ module Docs
 
     def get_latest_version(opts)
       doc = fetch_doc('https://pytorch.org/docs/versions.html', opts)
-      doc.css('li .toctree-l1').each do |node|
-          match = /\Av(.+?) \(stable release\)/.match(node.content)
-          if match
-              return match[1]
-          end
+      doc.css('li.toctree-l1').each do |node|
+        match = /v(.+?) \(stable release\)/.match(node.content)
+        if match
+          return match[1]
+        end
       end
     end
   end

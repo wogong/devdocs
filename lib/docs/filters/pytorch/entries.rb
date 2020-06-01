@@ -2,7 +2,7 @@ module Docs
   class Pytorch
     class EntriesFilter < Docs::EntriesFilter
       def get_name
-        # The id of the container `div .section` indicates the page type.
+        # The id of the container `div.section` indicates the page type.
         # If the id starts with `module-`, then it's an API reference,
         # otherwise it is a note or design doc.
         # After the `sphinx/clean_html` filter, that id is assigned to the second element.
