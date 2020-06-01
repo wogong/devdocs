@@ -11,10 +11,10 @@ module Docs
       code: 'https://github.com/pytorch/pytorch'
     }
 
-    html_filters.push 'sphinx/clean_html', 'pytorch/clean_html', 'pytorch/entries'
+    html_filters.push 'pytorch/clean_html', 'sphinx/clean_html', 'pytorch/entries'
 
     options[:skip] = ['cpp_index.html', 'packages.html', 'py-modindex.html', 'genindex.html']
-    options[:skip_patterns] = [/\Acommunity/, /\A_modules/, /\Anotes/, /\Aorg\/pytorch\//, /\Arpc\//]
+    options[:skip_patterns] = [/\Acommunity/, /\A_modules/, /\Anotes/, /\Aorg\/pytorch\//]
     options[:max_image_size] = 256_000
 
     options[:attribution] = <<-HTML

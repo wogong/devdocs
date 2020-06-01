@@ -8,5 +8,3 @@ module Docs
     end
   end
 end
-  
-  
