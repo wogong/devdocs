@@ -21,12 +21,17 @@ module Docs
             next
           end
 
-          # TODO: classmethod
           case node.parent['class']
+          when 'method'
+            if node.at_css('em .property')
+              # this instance method is a property, so treat it as an attribute
+              entries << [name, node['id']]
+            else
+              entries << [name + '()', node['id']]
           when 'function'
-            entries << [name + '()', node['id'], nil]
+            entries << [name + '()', node['id']]
           when 'class', 'attribute'
-            entries << [name, node['id'], nil]
+            entries << [name, node['id']]
           end
         end
 
